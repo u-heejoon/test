@@ -1,0 +1,8 @@
+rootProject.name = 'demo1'
+
+include(':common')
+include(':service1')
+include(':service2')
+include(':service3')
+include(':service4')
+include(':service5')
