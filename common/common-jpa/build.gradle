@@ -1,0 +1,10 @@
+plugins {
+    id "java-conventions"
+    id "spring-web-conventions"
+    id "jpa-conventions"
+    id "querydsl-conventions"
+}
+
+dependencies {
+
+}

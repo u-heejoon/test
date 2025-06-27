@@ -1,0 +1,24 @@
+services:
+  sso_mariadb:
+    image: mariadb:latest
+    container_name: sso_mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: passwd
+      MYSQL_DATABASE: sso
+      MYSQL_USER: octatco
+      MYSQL_PASSWORD: passwd
+    ports:
+      - "13306:3306"
+    volumes:
+      - /data/mariadb:/var/lib/mysql
+    networks:
+      sso_network:
+        ipv4_address: 172.30.0.100
+
+networks:
+  sso_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.0.0/24
+

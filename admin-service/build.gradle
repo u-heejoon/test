@@ -1,0 +1,11 @@
+plugins {
+    id "java-conventions"
+    id "spring-web-conventions"
+    id "querydsl-conventions"
+    id "jpa-conventions"
+    id "mariadb-conventions"
+}
+
+dependencies {
+    implementation(project(":common:common-jpa"))
+}
