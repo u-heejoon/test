@@ -17,7 +17,7 @@ spring:
       connection-timeout: 30000   # 커넥션 획득 최대 대기시간: 풀에서 커넥션을 가져오기 위해 기다릴 수 있는 최대 시간 (밀리초), 이 시간을 초과하면 예외 발생
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: create
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     properties:
@@ -34,9 +34,9 @@ spring:
 
 logging:
   config:
-    classpath:/logback-local.xml
+    classpath:/logback-dev.xml
   level:
-    com.example.demo: DEBUG
+    com.example.demo: INFO
 #    org.hibernate: DEBUG
 #    org.springframework: INFO
 

@@ -6,6 +6,9 @@ import org.hibernate.engine.jdbc.internal.FormatStyle;
 
 import java.util.Locale;
 
+/**
+ * P6spy 로그 포맷
+ */
 public class P6spySqlFormatter implements MessageFormattingStrategy {
     private static final String CREATE = "create";
     private static final String ALTER = "alter";

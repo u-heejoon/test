@@ -1,5 +1,8 @@
 **/generated/
 /data
+/locust
+/logs
+
 
 HELP.md
 .gradle

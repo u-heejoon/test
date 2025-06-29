@@ -6,6 +6,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.AuditorAware;
 
+/**
+ * <p>
+ *  AuditorAware Default 설정
+ * </p>
+ */
 @Configuration
 public class DefaultAuditAwareConfiguration {
 

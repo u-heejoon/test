@@ -8,4 +8,11 @@ plugins {
 
 dependencies {
     implementation(project(":common:common-jpa"))
+    implementation(project(":common:common-spring"))
+    implementation(project(":common:common-response"))
+
+    implementation 'org.springframework.boot:spring-boot-starter-cache'
+    implementation 'com.github.ben-manes.caffeine:caffeine'
+
+    implementation 'net.logstash.logback:logstash-logback-encoder:8.1'
 }
