@@ -1,9 +1,0 @@
-plugins {
-    id "java-convention"
-    id "spring-web-convention"
-    id "data-jpa-querydsl-convention"
-    id "mariadb-convention"
-}
-
-dependencies {
-}

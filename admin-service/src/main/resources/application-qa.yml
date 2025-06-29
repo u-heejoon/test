@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: sso
+
+  datasource:
+    octatco:
+      url: jdbc:mariadb://localhost:13306/sso?characterEncoding=UTF-8&serverTimezone=UTC&serverTimezone=Asia/Seoul&useLegacyDatetimeCode=false&allowPublicKeyRetrieval=true
+      username: octatco
+      password: passwd
+      driver-class-name: org.mariadb.jdbc.Driver
+    hikari:
+      pool-name: Octatco-SSO-DB-Connection-Pool
+      minimum-idle: 5             # 최소 유휴 커넥션 수: 풀에 유지할 최소한의 사용 대기중인 커넥션 수
+      maximum-pool-size: 20       # 최대 풀 사이즈: 풀에서 동시에 활성화 될 수 있는 커넥션의 최대 수 (유휴+활성)
+      idle-timeout: 600000        # 유휴 커넥션 유지 시간: 커넥션이 사용되지 않고 풀에 머무를 수 있는 최대 시간 (밀리초)
+      max-lifetime: 1800000       # 커넥션 최대 수명: 커넥션이 생성된 후 최대 사용할 수 있는 시간 (밀리초), 이 시간이 지나면 재생성됨
+      connection-timeout: 30000   # 커넥션 획득 최대 대기시간: 풀에서 커넥션을 가져오기 위해 기다릴 수 있는 최대 시간 (밀리초), 이 시간을 초과하면 예외 발생
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDBDialect
+        timezone.default_storage: NORMALIZE_UTC
+        jdbc.time_zone: UTC
+#        show_sql: true
+        format_sql: true
+        query:
+          in_clause_parameter_padding: false # IN 절에서의 파라미터 포맷팅 (prod : false)
+        use_sql_comments: false # SQL 주석 사용 (prod : false), p6spy 사용시 이슈 발생
+
+
+logging:
+  config:
+    classpath:/logback-qa.xml
+  level:
+    com.example.demo: INFO
+#    org.hibernate: DEBUG
+#    org.springframework: INFO
+
+decorator:
+  datasource:
+    p6spy:
+      enable-logging: false
+

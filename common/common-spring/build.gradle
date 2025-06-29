@@ -1,0 +1,9 @@
+plugins {
+    id "java-conventions"
+    id "spring-web-conventions"
+}
+
+dependencies {
+    implementation(project(":common:common-response"))
+    implementation(project(":common:common-utils"))
+}

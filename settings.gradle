@@ -1,8 +1,13 @@
-rootProject.name = 'demo1'
+rootProject.name = 'octatco-sso-backend'
 
-include(':common')
-include(':service1')
-include(':service2')
-include(':service3')
-include(':service4')
-include(':service5')
+include(":common")
+include(":common:common-jpa")
+include(":common:common-response")
+include(":common:common-utils")
+include(":common:common-spring")
+
+include(":admin-service")
+include(":user-service")
+include(":auth-service")
+include(":fido-rp-service")
+include(":saml-service")
